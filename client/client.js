@@ -104,13 +104,14 @@ const init = () => {
 
       const name = domoForm.querySelector('#domoName').value;
       const age = domoForm.querySelector('#domoAge').value;
+      const level = domoForm.querySelector('#domoLevel').value;
 
-      if(!name || !age) {
+      if(!name || !age || !level) {
         handleError('All fields are required!');
         return false;
       }
 
-      sendPost(domoForm.getAttribute('action'), {name, age});
+      sendPost(domoForm.getAttribute('action'), {name, age, level});
       return false;
     });
   }
